@@ -3,58 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️</title>
+
+<title>Birthday 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body{
-  margin:0;
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-  font-family:sans-serif;
-  text-align:center;
-  color:white;
+    margin:0;
+    padding:0;
+    font-family:'Prompt', sans-serif;
+    background: linear-gradient(135deg, #f7f7f7, #eaeaea);
+    color:#333;
+    overflow:hidden;
 }
 
-.container{
-  padding:50px 20px;
+.page{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
 
 h1{
-  font-size:50px;
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:20px;
 }
 
-.message{
-  font-size:22px;
-  max-width:700px;
-  margin:auto;
+p{
+    font-size:18px;
+    line-height:1.9;
+    max-width:500px;
+    font-weight:300;
 }
 
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  background:white;
-  color:#ff4d6d;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
+input{
+    margin-top:15px;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    text-align:center;
+    font-size:16px;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    background:#333;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#555;
+}
+
+#page2{
+    display:none;
+}
+
+.heart{
+    position:absolute;
+    color:#ddd;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh); opacity:0;}
+    50%{opacity:0.6;}
+    100%{transform:translateY(-10vh); opacity:0;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>🎂 Happy Birthday 🎂</h1>
+<!-- 🎵 เพลง (ใส่ลิงก์ piano version) -->
+<audio id="music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9fb2b1b0f7.mp3?filename=romantic-piano-ambient-110397.mp3" type="audio/mpeg">
+</audio>
 
-<p class="message">
-สุขสันต์วันเกิดนะ ❤️
-ขอให้มีความสุขมาก ๆ
-สมหวังในทุกเรื่อง และยิ้มได้ในทุกวัน
-</p>
+<!-- หน้าแรก -->
+<div class="page" id="page1">
 
-<a class="btn" href="#">กดตรงนี้ 💖</a>
+    <h1>วันนี้เป็นวันของใครน๊า 🤍</h1>
+
+    <input type="password" id="password" maxlength="4" placeholder="ใส่รหัส">
+
+    <button onclick="checkPassword()">เข้าไปดู</button>
 
 </div>
+
+<!-- หน้าสอง -->
+<div class="page" id="page2">
+
+    <h1>สุขสันต์วันเกิด 🤍</h1>
+
+    <p>
+        อ๊ะรู้ตัวนี่นา 😊<br><br>
+
+        สุขสันต์วันเกิดนะคนโตของเด็ก<br>
+        แก่ขึ้นอีกปีแล้วนะ 🤍<br><br>
+
+        ขอให้พี่มีความสุขเยอะ ๆ<br>
+        ยิ้มเยอะ ๆ ในทุกวัน<br><br>
+
+        ขอให้เจอแต่เรื่องดี ๆ เข้ามา<br>
+        มีคนรักมากมายรอบตัว 💭<br><br>
+
+        ขอให้สุขภาพแข็งแรง<br>
+        และมีแต่สิ่งดี ๆ เข้ามาในชีวิตนะ
+    </p>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+    let password = document.getElementById("password").value;
+
+    if(password === "2505"){
+
+        document.getElementById("page1").style.display = "none";
+        document.getElementById("page2").style.display = "flex";
+
+        // 🎵 เล่นเพลงเมื่อเข้าถูก
+        document.getElementById("music").play();
+
+    }else{
+        alert("รหัสไม่ถูกนะ 🤍");
+    }
+}
+
+// 🤍 เอฟเฟกต์หัวใจ
+for(let i=0;i<25;i++){
+
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "🤍";
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = (Math.random()*3+4) + "s";
+    heart.style.fontSize = (Math.random()*12+10) + "px";
+
+    document.body.appendChild(heart);
+}
+
+</script>
 
 </body>
 </html>
