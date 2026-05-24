@@ -1,163 +1,119 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Birthday 🤍</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-body{
-    margin:0;
-    padding:0;
-    font-family:'Prompt', sans-serif;
-    background: linear-gradient(135deg, #f7f7f7, #eaeaea);
-    color:#333;
-    overflow:hidden;
-}
-
-.page{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-h1{
-    font-size:28px;
-    font-weight:500;
-    margin-bottom:20px;
-}
-
-p{
-    font-size:18px;
-    line-height:1.9;
-    max-width:500px;
-    font-weight:300;
-}
-
-input{
-    margin-top:15px;
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    text-align:center;
-    font-size:16px;
-}
-
-button{
-    margin-top:15px;
-    padding:10px 25px;
-    border:none;
-    border-radius:20px;
-    background:#333;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#555;
-}
-
-#page2{
-    display:none;
-}
-
-.heart{
-    position:absolute;
-    color:#ddd;
-    animation:float 6s linear infinite;
-}
-
-@keyframes float{
-    0%{transform:translateY(100vh); opacity:0;}
-    50%{opacity:0.6;}
-    100%{transform:translateY(-10vh); opacity:0;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 🤍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Prompt', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fff1f3, #ffeef5);
+        }
+        /* glow background */
+        .glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #ffd6e0;
+            filter: blur(120px);
+            top: -120px;
+            left: -120px;
+            opacity: 0.6;
+        }
+        .glow2 {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #ffe4f0;
+            filter: blur(120px);
+            bottom: -120px;
+            right: -120px;
+            opacity: 0.6;
+        }
+        .page {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            width: 85%;
+            max-width: 420px;
+        }
+        h1 {
+            font-size:
+                    </style>
 </head>
-
 <body>
-
-<!-- 🎵 เพลง (ใส่ลิงก์ piano version) -->
-<audio id="music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9fb2b1b0f7.mp3?filename=romantic-piano-ambient-110397.mp3" type="audio/mpeg">
-</audio>
-
-<!-- หน้าแรก -->
-<div class="page" id="page1">
-
-    <h1>วันนี้เป็นวันของใครน๊า 🤍</h1>
-
-    <input type="password" id="password" maxlength="4" placeholder="ใส่รหัส">
-
-    <button onclick="checkPassword()">เข้าไปดู</button>
-
-</div>
-
-<!-- หน้าสอง -->
-<div class="page" id="page2">
-
-    <h1>สุขสันต์วันเกิด 🤍</h1>
-
-    <p>
-        อ๊ะรู้ตัวนี่นา 😊<br><br>
-
-        สุขสันต์วันเกิดนะคนโตของเด็ก<br>
-        แก่ขึ้นอีกปีแล้วนะ 🤍<br><br>
-
-        ขอให้พี่มีความสุขเยอะ ๆ<br>
-        ยิ้มเยอะ ๆ ในทุกวัน<br><br>
-
-        ขอให้เจอแต่เรื่องดี ๆ เข้ามา<br>
-        มีคนรักมากมายรอบตัว 💭<br><br>
-
-        ขอให้สุขภาพแข็งแรง<br>
-        และมีแต่สิ่งดี ๆ เข้ามาในชีวิตนะ
-    </p>
-
-</div>
-
-<script>
-
-function checkPassword(){
-
-    let password = document.getElementById("password").value;
-
-    if(password === "2505"){
-
-        document.getElementById("page1").style.display = "none";
-        document.getElementById("page2").style.display = "flex";
-
-        // 🎵 เล่นเพลงเมื่อเข้าถูก
-        document.getElementById("music").play();
-
-    }else{
-        alert("รหัสไม่ถูกนะ 🤍");
-    }
-}
-
-// 🤍 เอฟเฟกต์หัวใจ
-for(let i=0;i<25;i++){
-
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "🤍";
-
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.animationDuration = (Math.random()*3+4) + "s";
-    heart.style.fontSize = (Math.random()*12+10) + "px";
-
-    document.body.appendChild(heart);
-}
-
-</script>
-
-</body>
-</html>
+    <!-- background -->
+   div>
+    <!-- music -->
+    <audio id="music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9fb2b1b0f7.mp3">
+    </audio>
+    <!-- PAGE 1 -->
+    <div class="page" id="page1">
+        <div class="card">
+            <h1>🎂 วันนี้เป็นวันของใครน๊า 🤍</h1>
+            <div style="font-size:22px; margin: 10px 0;">
+                💖 🎂 🍰 🎈 🤍
+            </div>
+            <p>ใส่รหัสลับเพื่อเปิดข้อความ 💌</p>
+            <input id="pw" maxlength="4" placeholder="ใส่รหัส">
+            <button onclick="check()">เปิดเลย 💖</button>
+        </div>
+    </div>
+    <!-- PAGE 2 -->
+    <div class="page" id="page2">
+        <div class="card">
+            <h1>💖 สุขสันต์วันเกิดนะ 🤍</h1>
+            <div style="font-size:24px;">
+                🎂 🎈 🍰 🎁 ✨
+            </div>
+            <p>
+                    อ๊ะรู้ตัวแล้วใช่ไหม 😊<br><br>
+                สุขสันต์วันเกิดนะคนโตของเด็ก 🤍<br><br>
+                โตขึ้นอีกปีแล้วนะ 🎂<br><br>
+                ขอให้พี่มีความสุขเยอะ ๆ<br>
+                ยิ้มเยอะ ๆ ในทุกวัน 💖<br><br>
+                ขอให้เจอแต่เรื่องดี ๆ<br>
+                มีคนรักมากมายรอบตัว ✨<br><br>
+                ขอให้สุขภาพแข็งแรงนะ<br>
+                และมีแต่ความสุขในทุกวัน 🤍
+            </p>
+            <p>🎂🍰 ขอให้วันนี้เป็นวันที่อบอุ่นที่สุดนะ 💖</p>
+            <button onclick="nextPage()">💌 ไหนลองดูหน้าถัดไป
+                    </p>
+    <button onclick="nextPage()">💌 ไหนลองดูหน้าถัดไปสิ</button>
+    </div>
+    </div>
+    <!-- PAGE 3 -->
+    <div class="page" id="page3" style="display: none;">
+        <div class="card">
+            <h1>💖 สุขสันต์วันครบรอบน๊าา 💖</h1>
+            <div style="font-size: 30px;">
+                🌹💖🌹<br>
+                🐰💞🐻<br>
+                🎀✨🤍
+            </div>
+            <p>
+                         💖✨<br><br>
+                รักคนโตตี้จุดดดดดดเยยยยย 🥺💖
+            </p>
+            <div style="font-size: 30px;">
+                🌹💖🌹💞🌷🎀
+            </div>
+        </div>
+    </div>
+    <script>
+        function
