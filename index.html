@@ -50,15 +50,17 @@ z-index:-1;
 .glow1{ top:-80px; left:-80px; }
 .glow2{ bottom:-80px; right:-80px; }
 
-/* pages */
+/* ⭐ FIX สำคัญที่สุด */
 .page{
 min-height:100vh;
 display:flex;
 justify-content:center;
-align-items:center;
-padding:30px 15px;
+align-items:flex-start;   /* ❗ เปลี่ยนจาก center */
+padding:40px 15px;
+overflow-y:auto;          /* ❗ ให้ scroll ได้ */
 }
 
+/* card */
 .card{
 background:rgba(255,255,255,.95);
 padding:22px;
@@ -67,8 +69,11 @@ width:92%;
 max-width:400px;
 text-align:center;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
+margin-top:auto;
+margin-bottom:auto;
 }
 
+/* text */
 h1{
 color:#ff5d8f;
 margin-bottom:10px;
@@ -113,7 +118,6 @@ button:hover{
 background:#ff5d8f;
 }
 
-/* hide pages */
 #page2,#page3{display:none;}
 
 </style>
