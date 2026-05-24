@@ -23,7 +23,21 @@ overflow:hidden;
 background:linear-gradient(135deg,#fff0f5,#ffe4ec);
 }
 
-/* background glow */
+/* 🌸 falling animation */
+.fall{
+position:fixed;
+top:-10%;
+font-size:24px;
+animation:fall linear infinite;
+opacity:0.8;
+}
+
+@keyframes fall{
+0%{ transform:translateY(-10%) rotate(0deg); }
+100%{ transform:translateY(110vh) rotate(360deg); }
+}
+
+/* glow */
 .glow{
 position:absolute;
 width:300px;
@@ -36,7 +50,7 @@ z-index:-1;
 .glow1{ top:-100px; left:-100px; }
 .glow2{ bottom:-100px; right:-100px; }
 
-/* page layout */
+/* pages */
 .page{
 height:100vh;
 display:flex;
@@ -45,7 +59,6 @@ align-items:center;
 padding:20px;
 }
 
-/* card */
 .card{
 background:rgba(255,255,255,.95);
 padding:30px;
@@ -56,7 +69,6 @@ text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* text */
 h1{
 color:#ff5d8f;
 margin-bottom:15px;
@@ -68,7 +80,6 @@ color:#666;
 font-size:16px;
 }
 
-/* input */
 input{
 width:180px;
 padding:12px;
@@ -76,12 +87,10 @@ border:none;
 border-radius:15px;
 margin-top:15px;
 text-align:center;
-font-size:16px;
 background:#fff5f8;
 outline:none;
 }
 
-/* button */
 button{
 margin-top:15px;
 padding:12px 25px;
@@ -89,7 +98,6 @@ border:none;
 border-radius:20px;
 background:#ff7aa2;
 color:white;
-font-size:15px;
 cursor:pointer;
 }
 
@@ -97,10 +105,8 @@ button:hover{
 background:#ff5d8f;
 }
 
-/* hide page2 */
-#page2{
-display:none;
-}
+/* hide pages */
+#page2,#page3{display:none;}
 
 .decor{
 font-size:28px;
@@ -115,28 +121,42 @@ margin:15px 0;
 <div class="glow glow1"></div>
 <div class="glow glow2"></div>
 
+<!-- 🌸 floating elements -->
+<script>
+function createFalling(){
+const el=document.createElement("div");
+el.classList.add("fall");
+
+const items=["💖","🌸","✨","🎀","💗"];
+el.innerText=items[Math.floor(Math.random()*items.length)];
+
+el.style.left=Math.random()*100+"vw";
+el.style.animationDuration=(3+Math.random()*5)+"s";
+el.style.fontSize=(16+Math.random()*20)+"px";
+
+document.body.appendChild(el);
+
+setTimeout(()=>{el.remove();},8000);
+}
+
+setInterval(createFalling,300);
+</script>
+
 <!-- PAGE 1 -->
 <div class="page" id="page1">
 <div class="card">
 
 <h1>🎂 วันนี้เป็นวันของใครน๊าาา 🎂</h1>
 
-<div class="decor">
-🎈 🎁 🍰 💖 ✨
-</div>
+<div class="decor">🎈 🎁 🍰 💖 ✨</div>
 
-<p>
-มีคนพิเศษกำลังจะมีวันสำคัญนะ 🤭<br>
-ลองใส่รหัสลับดูสิ 💌
-</p>
+<p>ลองใส่รหัสลับดูสิ 💌</p>
 
-<input id="pw" maxlength="4" placeholder="ใส่รหัสผ่าน">
+<input id="pw" maxlength="4" placeholder="ใส่รหัส">
 
 <br>
 
-<button onclick="checkPassword()">
-เปิดข้อความ 💖
-</button>
+<button onclick="checkPassword()">เปิดข้อความ 💖</button>
 
 </div>
 </div>
@@ -145,26 +165,39 @@ margin:15px 0;
 <div class="page" id="page2">
 <div class="card">
 
-<h1>💖 สุขสันต์วันเกิดนะคนโตของเด็ก 💖</h1>
+<h1>💖 สุขสันต์วันเกิดนะ 💖</h1>
 
-<div class="decor">
-🎂 🎈 🎁 🍰 ✨
-</div>
+<div class="decor">🎂🎈✨🌸</div>
 
 <p>
-ปีนี้โตขึ้นอีกปีแล้วนะ 🎂✨<br><br>
+ขอให้มีความสุขมาก ๆ นะ 🤍<br>
+ยิ้มเยอะ ๆ ในทุกวัน ✨<br>
+เจอแต่เรื่องดี ๆ 🌷<br><br>
 
-ขอให้คนโตสุขภาพร่างกายแข็งแรง 🤍<br>
-มีความสุขเยอะ ๆ ยิ้มเยอะ ๆ ในทุกวัน 😊<br><br>
+รักนะ 💕
+</p>
 
-ขอให้มีแต่วันที่สดใส 🌷<br>
-เจอแต่เรื่องดี ๆ เข้ามาในชีวิต ✨<br><br>
+<button onclick="goPage3()">ไหนลองกดดูซิ 👉</button>
 
-ขอให้ทุกสิ่งที่หวังไว้ค่อย ๆ เป็นจริงนะ 💕<br><br>
+</div>
+</div>
 
-และขอให้วันนี้เป็นวันที่ดีของพี่นะ 🥰<br><br>
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+<div class="card">
 
-🎂🎈 Happy Birthday 🎈🎂
+<h1>💖 สุขสันต์วันครบรอบนะคนโต 💖</h1>
+
+<div class="decor">🌸💖🎀✨💗</div>
+
+<p>
+เด็กรักพี่นะ 💕<br><br>
+
+ขอโทษที่ทำให้ไม่พอใจอยู่บ่อย ๆ 🥺<br>
+หวังว่าพี่เห็นแล้วจะอารมณ์ดีขึ้นนะ 😊✨<br><br>
+
+ตั้งใจทำให้มากเลยนะ 💗<br>
+รักพี่ที่สุดเลยยยยย 💖💖💖
 </p>
 
 </div>
@@ -173,20 +206,19 @@ margin:15px 0;
 <script>
 
 function checkPassword(){
-
 let pw=document.getElementById("pw").value;
 
 if(pw==="2505"){
-
 document.getElementById("page1").style.display="none";
 document.getElementById("page2").style.display="flex";
-
 }else{
-
-alert("อุ๊ย 🤭 รหัสยังไม่ถูกน๊า");
-
+alert("รหัสยังไม่ถูกน๊า 🤭");
+}
 }
 
+function goPage3(){
+document.getElementById("page2").style.display="none";
+document.getElementById("page3").style.display="flex";
 }
 
 </script>
