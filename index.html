@@ -23,6 +23,20 @@ overflow:hidden;
 background:linear-gradient(135deg,#fff0f5,#ffe4ec);
 }
 
+/* background glow */
+.glow{
+position:absolute;
+width:300px;
+height:300px;
+background:#ffd6e5;
+filter:blur(120px);
+z-index:-1;
+}
+
+.glow1{ top:-100px; left:-100px; }
+.glow2{ bottom:-100px; right:-100px; }
+
+/* page layout */
 .page{
 height:100vh;
 display:flex;
@@ -31,6 +45,7 @@ align-items:center;
 padding:20px;
 }
 
+/* card */
 .card{
 background:rgba(255,255,255,.95);
 padding:30px;
@@ -41,6 +56,7 @@ text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
+/* text */
 h1{
 color:#ff5d8f;
 margin-bottom:15px;
@@ -52,6 +68,7 @@ color:#666;
 font-size:16px;
 }
 
+/* input */
 input{
 width:180px;
 padding:12px;
@@ -64,6 +81,7 @@ background:#fff5f8;
 outline:none;
 }
 
+/* button */
 button{
 margin-top:15px;
 padding:12px 25px;
@@ -79,6 +97,7 @@ button:hover{
 background:#ff5d8f;
 }
 
+/* hidden page */
 #page2{
 display:none;
 }
@@ -88,23 +107,13 @@ font-size:28px;
 margin:15px 0;
 }
 
-.glow{
-position:absolute;
-width:300px;
-height:300px;
-background:#ffd6e5;
-filter:blur(120px);
-z-index:-1;
-}
-
-.glow1{
-top:-100px;
-left:-100px;
-}
-
-.glow2{
-bottom:-100px;
-right:-100px;
+/* spotify link */
+a{
+display:inline-block;
+margin-top:20px;
+text-decoration:none;
+color:#ff5d8f;
+font-weight:500;
 }
 
 </style>
@@ -116,9 +125,7 @@ right:-100px;
 <div class="glow glow2"></div>
 
 <!-- PAGE 1 -->
-
 <div class="page" id="page1">
-
 <div class="card">
 
 <h1>🎂 วันนี้เป็นวันของใครน๊าาา 🎂</h1>
@@ -132,10 +139,7 @@ right:-100px;
 ลองใส่รหัสลับดูสิ 💌
 </p>
 
-<input
-id="pw"
-maxlength="4"
-placeholder="ใส่รหัสผ่าน">
+<input id="pw" maxlength="4" placeholder="ใส่รหัสผ่าน">
 
 <br>
 
@@ -144,13 +148,10 @@ placeholder="ใส่รหัสผ่าน">
 </button>
 
 </div>
-
 </div>
 
 <!-- PAGE 2 -->
-
 <div class="page" id="page2">
-
 <div class="card">
 
 <h1>💖 สุขสันต์วันเกิดนะคนโตของเด็ก 💖</h1>
@@ -160,46 +161,27 @@ placeholder="ใส่รหัสผ่าน">
 </div>
 
 <p>
+ปีนี้โตขึ้นอีกปีแล้วนะ 🎂✨<br><br>
 
-ปีนี้โตขึ้นอีกปีแล้วนะ 🎂✨
+ขอให้คนโตสุขภาพร่างกายแข็งแรง 🤍<br>
+มีความสุขเยอะ ๆ ยิ้มเยอะ ๆ ในทุกวัน 😊<br><br>
 
-<br><br>
+ขอให้มีแต่วันที่สดใส 🌷<br>
+เจอแต่เรื่องดี ๆ เข้ามาในชีวิต ✨<br><br>
 
-ขอให้คนโตสุขภาพร่างกายแข็งแรง 🤍
+ขอให้ทุกสิ่งที่หวังไว้ค่อย ๆ เป็นจริงนะ 💕<br><br>
 
-<br>
-
-มีความสุขเยอะ ๆ
-
-<br>
-
-ยิ้มเยอะ ๆ ในทุกวัน 😊
-
-<br><br>
-
-ขอให้มีแต่วันที่สดใส 🌷
-
-<br>
-
-เจอแต่เรื่องดี ๆ เข้ามาในชีวิต ✨
-
-<br><br>
-
-ขอให้ทุกสิ่งที่หวังไว้
-ค่อย ๆ เป็นจริงนะ 💕
-
-<br><br>
-
-และขอให้วันนี้เป็นวันที่ดีของพี่นะ 🥰
-
-<br><br>
+และขอให้วันนี้เป็นวันที่ดีของพี่นะ 🥰<br><br>
 
 🎂🎈 Happy Birthday 🎈🎂
-
 </p>
 
-</div>
+<!-- Spotify link (ย้ายมาไว้ถูกที่แล้ว) -->
+<a href="https://open.spotify.com/track/1Q7EgiMOuwDcB0PJC6AzON?si=1d5pfaqjQ1meCQuLmRQzPg" target="_blank">
+💖 เปิดเพลงพิเศษ
+</a>
 
+</div>
 </div>
 
 <script>
@@ -225,6 +207,3 @@ alert("อุ๊ย 🤭 รหัสยังไม่ถูกน๊า");
 
 </body>
 </html>
-<a href="https://open.spotify.com/track/1Q7EgiMOuwDcB0PJC6AzON?si=1d5pfaqjQ1meCQuLmRQzPg" target="_blank">
-💖 
-</a>
