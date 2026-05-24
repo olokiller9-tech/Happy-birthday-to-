@@ -1,119 +1,227 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You 🤍</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Prompt', sans-serif;
-            height: 100vh;
-            overflow: hidden;
-            background: linear-gradient(135deg, #fff1f3, #ffeef5);
-        }
-        /* glow background */
-        .glow {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: #ffd6e0;
-            filter: blur(120px);
-            top: -120px;
-            left: -120px;
-            opacity: 0.6;
-        }
-        .glow2 {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: #ffe4f0;
-            filter: blur(120px);
-            bottom: -120px;
-            right: -120px;
-            opacity: 0.6;
-        }
-        .page {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.92);
-            padding: 30px 25px;
-            border-radius: 25px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            width: 85%;
-            max-width: 420px;
-        }
-        h1 {
-            font-size:
-                    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Mali',cursive;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#fff0f5,#ffe4ec);
+}
+
+.page{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.card{
+background:rgba(255,255,255,.95);
+padding:30px;
+border-radius:30px;
+width:90%;
+max-width:450px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+h1{
+color:#ff5d8f;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.9;
+color:#666;
+font-size:16px;
+}
+
+input{
+width:180px;
+padding:12px;
+border:none;
+border-radius:15px;
+margin-top:15px;
+text-align:center;
+font-size:16px;
+background:#fff5f8;
+outline:none;
+}
+
+button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#ff7aa2;
+color:white;
+font-size:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff5d8f;
+}
+
+#page2{
+display:none;
+}
+
+.decor{
+font-size:28px;
+margin:15px 0;
+}
+
+.glow{
+position:absolute;
+width:300px;
+height:300px;
+background:#ffd6e5;
+filter:blur(120px);
+z-index:-1;
+}
+
+.glow1{
+top:-100px;
+left:-100px;
+}
+
+.glow2{
+bottom:-100px;
+right:-100px;
+}
+
+</style>
 </head>
+
 <body>
-    <!-- background -->
-   div>
-    <!-- music -->
-    <audio id="music" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9fb2b1b0f7.mp3">
-    </audio>
-    <!-- PAGE 1 -->
-    <div class="page" id="page1">
-        <div class="card">
-            <h1>🎂 วันนี้เป็นวันของใครน๊า 🤍</h1>
-            <div style="font-size:22px; margin: 10px 0;">
-                💖 🎂 🍰 🎈 🤍
-            </div>
-            <p>ใส่รหัสลับเพื่อเปิดข้อความ 💌</p>
-            <input id="pw" maxlength="4" placeholder="ใส่รหัส">
-            <button onclick="check()">เปิดเลย 💖</button>
-        </div>
-    </div>
-    <!-- PAGE 2 -->
-    <div class="page" id="page2">
-        <div class="card">
-            <h1>💖 สุขสันต์วันเกิดนะ 🤍</h1>
-            <div style="font-size:24px;">
-                🎂 🎈 🍰 🎁 ✨
-            </div>
-            <p>
-                    อ๊ะรู้ตัวแล้วใช่ไหม 😊<br><br>
-                สุขสันต์วันเกิดนะคนโตของเด็ก 🤍<br><br>
-                โตขึ้นอีกปีแล้วนะ 🎂<br><br>
-                ขอให้พี่มีความสุขเยอะ ๆ<br>
-                ยิ้มเยอะ ๆ ในทุกวัน 💖<br><br>
-                ขอให้เจอแต่เรื่องดี ๆ<br>
-                มีคนรักมากมายรอบตัว ✨<br><br>
-                ขอให้สุขภาพแข็งแรงนะ<br>
-                และมีแต่ความสุขในทุกวัน 🤍
-            </p>
-            <p>🎂🍰 ขอให้วันนี้เป็นวันที่อบอุ่นที่สุดนะ 💖</p>
-            <button onclick="nextPage()">💌 ไหนลองดูหน้าถัดไป
-                    </p>
-    <button onclick="nextPage()">💌 ไหนลองดูหน้าถัดไปสิ</button>
-    </div>
-    </div>
-    <!-- PAGE 3 -->
-    <div class="page" id="page3" style="display: none;">
-        <div class="card">
-            <h1>💖 สุขสันต์วันครบรอบน๊าา 💖</h1>
-            <div style="font-size: 30px;">
-                🌹💖🌹<br>
-                🐰💞🐻<br>
-                🎀✨🤍
-            </div>
-            <p>
-                         💖✨<br><br>
-                รักคนโตตี้จุดดดดดดเยยยยย 🥺💖
-            </p>
-            <div style="font-size: 30px;">
-                🌹💖🌹💞🌷🎀
-            </div>
-        </div>
-    </div>
-    <script>
-        function
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<!-- PAGE 1 -->
+
+<div class="page" id="page1">
+
+<div class="card">
+
+<h1>🎂 วันนี้เป็นวันของใครน๊าาา 🎂</h1>
+
+<div class="decor">
+🎈 🎁 🍰 💖 ✨
+</div>
+
+<p>
+มีคนพิเศษกำลังจะมีวันสำคัญนะ 🤭<br>
+ลองใส่รหัสลับดูสิ 💌
+</p>
+
+<input
+id="pw"
+maxlength="4"
+placeholder="ใส่รหัสผ่าน">
+
+<br>
+
+<button onclick="checkPassword()">
+เปิดข้อความ 💖
+</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<div class="card">
+
+<h1>💖 สุขสันต์วันเกิดนะคนโตของเด็ก 💖</h1>
+
+<div class="decor">
+🎂 🎈 🎁 🍰 ✨
+</div>
+
+<p>
+
+ปีนี้โตขึ้นอีกปีแล้วนะ 🎂✨
+
+<br><br>
+
+ขอให้คนโตสุขภาพร่างกายแข็งแรง 🤍
+
+<br>
+
+มีความสุขเยอะ ๆ
+
+<br>
+
+ยิ้มเยอะ ๆ ในทุกวัน 😊
+
+<br><br>
+
+ขอให้มีแต่วันที่สดใส 🌷
+
+<br>
+
+เจอแต่เรื่องดี ๆ เข้ามาในชีวิต ✨
+
+<br><br>
+
+ขอให้ทุกสิ่งที่หวังไว้
+ค่อย ๆ เป็นจริงนะ 💕
+
+<br><br>
+
+และขอให้วันนี้เป็นวันที่ดีของพี่นะ 🥰
+
+<br><br>
+
+🎂🎈 Happy Birthday 🎈🎂
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+let pw=document.getElementById("pw").value;
+
+if(pw==="2505"){
+
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="flex";
+
+}else{
+
+alert("อุ๊ย 🤭 รหัสยังไม่ถูกน๊า");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
