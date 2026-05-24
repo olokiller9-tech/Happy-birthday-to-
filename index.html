@@ -23,7 +23,7 @@ overflow-x:hidden;
 background:linear-gradient(135deg,#fff0f5,#ffe4ec);
 }
 
-/* 🌸 falling animation */
+/* 🌸 animation */
 .fall{
 position:fixed;
 top:-10%;
@@ -50,13 +50,14 @@ z-index:-1;
 .glow1{ top:-100px; left:-100px; }
 .glow2{ bottom:-100px; right:-100px; }
 
-/* pages */
+/* ⭐ FIX สำคัญ */
 .page{
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
+padding:50px 20px;
+overflow-y:auto;
 }
 
 .card{
@@ -105,20 +106,11 @@ button:hover{
 background:#ff5d8f;
 }
 
-/* hide pages */
 #page2,#page3{display:none;}
 
 .decor{
 font-size:28px;
 margin:15px 0;
-}
-
-/* ⭐ FIX สำคัญ: ให้หน้า 3 เลื่อนได้ */
-#page3{
-overflow-y:auto;
-align-items:flex-start;
-padding-top:60px;
-padding-bottom:60px;
 }
 
 </style>
@@ -129,7 +121,7 @@ padding-bottom:60px;
 <div class="glow glow1"></div>
 <div class="glow glow2"></div>
 
-<!-- 🌸 floating elements -->
+<!-- 🌸 floating -->
 <script>
 function createFalling(){
 const el=document.createElement("div");
@@ -143,10 +135,8 @@ el.style.animationDuration=(3+Math.random()*5)+"s";
 el.style.fontSize=(16+Math.random()*20)+"px";
 
 document.body.appendChild(el);
-
-setTimeout(()=>{el.remove();},8000);
+setTimeout(()=>el.remove(),8000);
 }
-
 setInterval(createFalling,300);
 </script>
 
